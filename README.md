@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# 프론트엔드 갤러리 앱 프로젝트
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 무엇을 만드나요?
 
-## Available Scripts
+### 기능
 
-In the project directory, you can run:
+지금까지 배운 모든 개념을 활용하여 인스타그램st의 간단한 갤러리 앱을 만듭니다.
 
-### `npm start`
+1. REST API를 사용하여 여러가지 이미지를 불러와 사용자에게 표시합니다.
+2. 이미지를 클릭하면, REST API를 사용하여 해당 이미지에 달린 댓글 목록을 불러와 사용자에게 표시합니다.
+3. REST API를 사용하여 댓글을 새로 작성할 수 있습니다.
+4. REST API를 사용하여 댓글을 삭제할 수 있습니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 필수 구현 사항
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![](./readme-image.png)
 
-### `npm test`
+1. 전체 이미지의 개수를 출력합니다.
+2. 여러 이미지들을 Grid 형태로 이미지, 제목, 설명을 함께 표시합니다.
+3. 여러 이미지 중 하나를 클릭하면 상세한 이미지 정보와 댓글 목록을 확인할 수 있는 페이지 (2번째 사진)로 이동합니다.
+4. 댓글을 작성할 수 있습니다.
+5. 댓글 목록을 표시합니다.
+6. 삭제 버튼을 클릭하면 해당 댓글을 삭제하고, 댓글 목록을 다시 불러옵니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+기타 디자인과 레이아웃은 원본과 요구사항과 크게 다르지 않은 범위에서 원하는대로 만드셔도 좋습니다.
 
-### `npm run build`
+### 완성본
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+https://likelion-inha-10.github.io/fe-gallery-project-example
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 주요 목표
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 실제 동작하는 간단한 웹 어플리케이션을 개발할 수 있다.
+- REST API 가 무엇인지 이해하며, 활용할 수 있다.
 
-### `npm run eject`
+## 사용하는 주요 라이브러리
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- React Router ([react-router-dom@6](https://reactrouter.com/docs/en/v6/getting-started/installation))
+- Styled Components ([styled-components](https://styled-components.com/docs/basics#installation))
+- Axios ([axios](https://axios-http.com/kr/docs/intro))
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 예제
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- https://github.com/Likelion-Inha-10/fe-gallery-project-example
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> 예제 코드는 과제 중 자유롭게 참고 가능하지만, 최대한 본인의 힘으로 해결하려 노력합시다 😇
