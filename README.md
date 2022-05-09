@@ -11,6 +11,8 @@
 3. REST API를 사용하여 댓글을 새로 작성할 수 있습니다.
 4. REST API를 사용하여 댓글을 삭제할 수 있습니다.
 
+> REST API 가 뭔가요? => https://hudi.blog/rest-api/
+
 ### 필수 구현 사항
 
 ![](./readme-image.png)
