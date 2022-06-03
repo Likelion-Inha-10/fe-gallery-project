@@ -87,6 +87,8 @@ surge ./build http://likelion-10th-inha-gallery-여러분의깃허브아이디.s
 
 > ⚠️ API 서버가 https 연결을 지원하지 않으므로 https 로 배포하지 않도록 주의합니다. (http로 배포해주세요.)
 
+[surge.sh 에 대해 더 자세히 알고싶다면?](https://hudi.blog/deploy-with-surge-sh/)
+
 ## 참고자료
 
 - [React Router v6 공식문서 (영어)](https://reactrouter.com/docs/en/v6/getting-started/tutorial)
