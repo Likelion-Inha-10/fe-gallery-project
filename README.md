@@ -69,18 +69,10 @@ http://likelion-10th-inha-gallery.surge.sh
 npm install --global surge
 ```
 
-2. 아래의 명령으로 프로젝트를 빌드합니다.
+2. 아래의 명령으로 프로젝트를 빌드하고 배포합니다.
 
 ```
-npm run build
-```
-
-> 빌드를 하면 html, css, js 파일이 /build 디렉토리에 만들어집니다.
-
-3. 아래의 명령으로 프로젝트를 배포합니다.
-
-```
-surge ./build http://likelion-10th-inha-gallery-여러분의깃허브아이디.surge.sh
+npm run build && cp ./build/index.html ./build/200.html && surge ./build http://likelion-10th-inha-gallery-여러분의깃허브아이디.surge.sh
 ```
 
 > 깃허브이름에 여러분의 깃허브 아이디를 입력해주세요. 저라면 devHudi 를 입력하면 되겠죠? 😎
