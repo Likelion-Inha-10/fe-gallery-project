@@ -54,32 +54,8 @@ http://likelion-10th-inha-gallery.surge.sh
 
 요청을 호스트 정보와 문서는 아래와 같습니다.
 
-- **HOST**: http://ec2-3-38-252-60.ap-northeast-2.compute.amazonaws.com:8080
-- **DOCS** : http://ec2-3-38-252-60.ap-northeast-2.compute.amazonaws.com:8080/swagger-ui/index.html
-
-## 배포 가이드
-
-> 배포(Deploy)란? 우리가 만든 웹 서비스를 실제 사용자가 사용할 수 있도록 서버에 올리는 작업.
-
-> 이번 실습에서는 https 이슈로 surge.sh 를 사용해 배포합니다. 아마 나중에 배포 특강이 있다면 netlify 혹은 cloudflare pages 로 진행될 것 같아요. 이점 참고 부탁합니다.
-
-1. 아래의 명령으로 surge를 설치합니다.
-
-```
-npm install --global surge
-```
-
-2. 아래의 명령으로 프로젝트를 빌드하고 배포합니다.
-
-```
-npm run build && cp ./build/index.html ./build/200.html && surge ./build http://likelion-10th-inha-gallery-여러분의깃허브아이디.surge.sh
-```
-
-> 깃허브이름에 여러분의 깃허브 아이디를 입력해주세요. 저라면 devHudi 를 입력하면 되겠죠? 😎
-
-> ⚠️ API 서버가 https 연결을 지원하지 않으므로 https 로 배포하지 않도록 주의합니다. (http로 배포해주세요.)
-
-[surge.sh 에 대해 더 자세히 알고싶다면?](https://hudi.blog/deploy-with-surge-sh/)
+- **HOST**: https://gallery.devhudi.xyz
+- **DOCS** : https://gallery.devhudi.xyz/swagger-ui/index.html
 
 ## 참고자료
 
