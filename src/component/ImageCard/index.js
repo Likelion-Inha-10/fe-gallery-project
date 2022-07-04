@@ -7,13 +7,15 @@ const CardWrapper = styled.div`
   background-color: white;
   text-align: center;
   margin: 0;
+  aspect-ratio: 1 / 1;
 `;
 
 const CardImage = styled.div`
   background-image: url(${(props) => props.backgroundImage});
-  width: auto;
-  height: 300px;
-  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
   margin: 0;
   cursor: pointer;
 `;

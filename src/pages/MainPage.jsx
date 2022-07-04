@@ -5,7 +5,7 @@ import Background from "../component/Background";
 import axios from "axios";
 
 const MainPage = ({ apiUrl }) => {
-  const [images, setImages] = useState();
+  const [images, setImages] = useState([]);
 
   useEffect(() => {
     axios.get(`${apiUrl}album/articles`).then((response) => {
