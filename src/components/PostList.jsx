@@ -21,7 +21,7 @@ const ContentWrapper = styled.div`
   color: rgb(173, 181, 189);
 `;
 
-const Content = ({ img, title, content }) => {
+const PostList = ({ img, title, content }) => {
   return (
     <>
       <ImageWrapper postImage={img} />
@@ -31,4 +31,4 @@ const Content = ({ img, title, content }) => {
   );
 };
 
-export default Content;
+export default PostList;

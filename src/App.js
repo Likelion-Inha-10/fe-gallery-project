@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
 import Home from "./pages/Home";
-import Page from "./pages/Page";
+import DetailPage from "./pages/DetailPage";
 
 const GlobalStyle = createGlobalStyle`
 *{
@@ -20,7 +20,10 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home apiUrl={API_URL} />}></Route>
-          <Route path="/:pageId" element={<Page apiUrl={API_URL} />}></Route>
+          <Route
+            path="/:pageId"
+            element={<DetailPage apiUrl={API_URL} />}
+          ></Route>
         </Routes>
       </BrowserRouter>
     </>

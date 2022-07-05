@@ -22,7 +22,7 @@ const ImageWrapper = styled.div`
   background-size: cover;
 `;
 
-const DetailPost = ({ title, content, img }) => {
+const PostDetail = ({ title, content, img }) => {
   return (
     <>
       <PostInfoWrapper>
@@ -34,4 +34,4 @@ const DetailPost = ({ title, content, img }) => {
   );
 };
 
-export default DetailPost;
+export default PostDetail;
