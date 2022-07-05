@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import TextBox from "../Text";
+import { TextBox } from "../Styled";
 
 const TitleWrapper = styled.div`
   height: 200px;

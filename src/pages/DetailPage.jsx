@@ -1,53 +1,83 @@
-import React from "react";
-import styled from "styled-components";
-import TextBox from "../component/Text";
-import Button from "../component/Button";
+import React, { useEffect, useState } from "react";
+import { Navigate, useParams } from "react-router-dom";
+import DetailCard from "../component/DetailCard";
+import Comment from "../component/Comment";
+import { Button, InputWrapper, WriteComments } from "../component/Styled";
+import axios from "axios";
 
-const DetailImage = styled.div`
-  background-image: url(${(props) => props.backgroundImage});
-  background-position: center center;
-  background-size: cover;
-  height: 400px;
-  margin: 0;
-`;
+const DetailPage = ({ apiUrl }) => {
+  const { imageId } = useParams();
+  const [detailImage, setDetailImage] = useState("");
+  const [comment, setComment] = useState([]);
+  const [inputComment, setInputComment] = useState("");
 
-const InputWrapper = styled.div`
-  height: 25px;
-  padding: 10px;
-  border-bottom: thin solid lightgray;
-`;
+  useEffect(() => {
+    axios.get(`${apiUrl}album/${imageId}`).then((response) => {
+      setDetailImage(response.data);
+    });
+    axios.get(`${apiUrl}album/find/${imageId}`).then((response) => {
+      setComment(response.data);
+    });
+  }, [apiUrl, imageId]);
 
-const WriteComments = styled.input`
-  width: 80%;
-  float: left;
-  font-size: 15px;
-  border: none;
-  &:focus {
-    outline: none;
-  }
-`;
+  const onChangeInputComment = (e) => {
+    setInputComment(e.target.value);
+  };
 
-const CommentWrapper = styled.div``;
+  const onPost = () => {
+    axios
+      .post(`${apiUrl}album/create/comment/${imageId}`, {
+        content: inputComment,
+      })
+      .then((response) => {
+        //setComment(response.data); //여기에 문제가 있음
+        comment.push(inputComment);
+        setInputComment("");
+        //window.location.reload();
+      });
+  };
 
-const DetailPage = () => {
+  const onDelete = (commentId) => {
+    axios
+      .delete(`${apiUrl}album/delete/comment/${commentId}`)
+      .then((response) => {
+        setComment(response.data);
+      });
+  };
+
   return (
     <>
-      <TextBox fontSize="30px" fontWeight="bold" padding="10px 0 8px 10px">
-        아기사자1
-      </TextBox>
-      <TextBox fontSize="18px" padding="0 0 20px 10px">
-        귀엽다...
-      </TextBox>
-      <DetailImage backgroundImage="title.jpeg"></DetailImage>
+      <DetailCard
+        imageTitle={detailImage.title}
+        likeNumber={detailImage.article_like}
+        imageContent={detailImage.content}
+        image={detailImage.img}
+      />
 
       <InputWrapper>
-        <WriteComments placeholder="댓글 작성..."></WriteComments>
-        <Button fontSize="18px" fontWeight="bold" color="#12A4FF" float="right">
+        <WriteComments
+          placeholder="댓글 작성..."
+          onChange={onChangeInputComment}
+          value={inputComment}
+        ></WriteComments>
+        <Button
+          fontSize="18px"
+          fontWeight="bold"
+          color="#12A4FF"
+          float="right"
+          onClick={onPost}
+        >
           게시
         </Button>
       </InputWrapper>
 
-      <TextBox></TextBox>
+      {comment.map((element) => (
+        <Comment
+          key={element.id}
+          commentText={element.content}
+          deleteComment={() => onDelete(element.id)}
+        />
+      ))}
     </>
   );
 };

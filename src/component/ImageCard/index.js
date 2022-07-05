@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import TextBox from "../Text";
+import { TextBox } from "../Styled";
 
 const CardWrapper = styled.div`
   background-color: white;
@@ -32,6 +32,12 @@ const ImageCard = (props) => {
       </NavLink>
 
       <CardText padding="13px">
+        <TextBox fontSize="13px" float="right" cursor="pointer">
+          ❤️
+          <TextBox fontSize="13px" float="right" cursor="auto">
+            {props.likeNumber}
+          </TextBox>
+        </TextBox>
         <TextBox color="black" fontSize="15px">
           {props.ImageTitle}
         </TextBox>

@@ -9,7 +9,10 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage apiUrl={API_URL}></MainPage>} />
-        <Route path="/image" element={<DetailPage></DetailPage>} />
+        <Route
+          path="/:imageId"
+          element={<DetailPage apiUrl={API_URL}></DetailPage>}
+        />
 
         <Route path="*" element={<h2>페이지를 찾을 수 없습니다.</h2>} />
       </Routes>
