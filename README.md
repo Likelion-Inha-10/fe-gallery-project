@@ -49,14 +49,6 @@ http://likelion-10th-inha-gallery.surge.sh
 
 기타 디자인과 레이아웃은 원본과 요구사항과 크게 다르지 않은 범위에서 원하는대로 만드셔도 좋습니다.
 
-### 📘 추가 구현 사항
-
-> 아래 내용은 필수 구현 사항을 모두 구현한 다음 선택적으로 구현해주세요.
-
-이미지 조회, 댓글 추가/삭제를 넘어 이미지를 추가하고 삭제하는 기능을 개발합니다. 아래 내용은 자유롭게 기획, 디자인 하여 구현해주세요 🤗.
-
-1. 특정한 이미지를 삭제하는 기능
-
 ## API
 
 요청을 호스트 정보와 문서는 아래와 같습니다.
@@ -77,3 +69,10 @@ http://likelion-10th-inha-gallery.surge.sh
 - https://github.com/Likelion-Inha-10/fe-gallery-project-example
 
 > 예제 코드는 과제 중 자유롭게 참고 가능하지만, 최대한 본인의 힘으로 해결하려 노력합시다 😇
+
+## 결과 영상
+
+https://user-images.githubusercontent.com/103057334/177610881-9c249e71-dd35-4f79-8b58-1c7a5cc6e027.mp4
+
+
+
