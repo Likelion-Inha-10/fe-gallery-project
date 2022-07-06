@@ -32,11 +32,8 @@ const ImageCard = (props) => {
       </NavLink>
 
       <CardText padding="13px">
-        <TextBox fontSize="13px" float="right" cursor="pointer">
-          ❤️
-          <TextBox fontSize="13px" float="right" cursor="auto">
-            {props.likeNumber}
-          </TextBox>
+        <TextBox fontSize="13px" float="right" cursor="default">
+          ❤️{props.likeNumber}
         </TextBox>
         <TextBox color="black" fontSize="15px">
           {props.ImageTitle}

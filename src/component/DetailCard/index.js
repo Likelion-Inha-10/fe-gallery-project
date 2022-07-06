@@ -16,7 +16,12 @@ const DetailCard = (props) => {
       <TextBox fontSize="30px" fontWeight="bold" padding="10px 0 8px 10px">
         {props.imageTitle}
       </TextBox>
-      <TextBox fontSize="14px" float="right" cursor="pointer">
+      <TextBox
+        fontSize="14px"
+        float="right"
+        cursor="pointer"
+        onClick={props.likePlus}
+      >
         ❤️
         <TextBox
           fontSize="13px"

@@ -6,7 +6,7 @@ const CommentWrapper = styled.div`
   overflow: hidden;
 `;
 
-const Comment = ({ commentText, deleteComment }) => {
+const Comment = (props) => {
   return (
     <>
       <CommentWrapper>
@@ -19,10 +19,10 @@ const Comment = ({ commentText, deleteComment }) => {
           익명
         </TextBox>
         <TextBox fontSize="16px" padding="10px 0 0 0" float="left">
-          {commentText}
+          {props.commentText}
         </TextBox>
         <Button
-          onClick={deleteComment}
+          onClick={props.deleteComment}
           color="gray"
           fontSize="16px"
           padding="10px 8px 0 0"

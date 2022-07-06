@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Navigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import DetailCard from "../component/DetailCard";
 import Comment from "../component/Comment";
 import { Button, InputWrapper, WriteComments } from "../component/Styled";
@@ -29,21 +29,28 @@ const DetailPage = ({ apiUrl }) => {
       .post(`${apiUrl}album/create/comment/${imageId}`, {
         content: inputComment,
       })
-      .then((response) => {
-        setComment(response.data); //여기에 문제가 있음
-        //comment.push(inputComment); //이건 혹시나 하고...무시해도 좋음
+      .then(() => {
+        axios.get(`${apiUrl}album/find/${imageId}`).then((response) => {
+          setComment(response.data);
+        });
         setInputComment("");
-        //window.location.reload();
       });
   };
 
   const onDelete = (commentId) => {
-    axios
-      .delete(`${apiUrl}album/delete/comment/${commentId}`)
-      .then((response) => {
+    axios.delete(`${apiUrl}album/delete/comment/${commentId}`).then(() => {
+      axios.get(`${apiUrl}album/find/${imageId}`).then((response) => {
         setComment(response.data);
-        //window.location.reload();
       });
+    });
+  };
+
+  const onLike = (imageId) => {
+    axios.patch(`${apiUrl}album/update/article/like/${imageId}`).then(() => {
+      axios.get(`${apiUrl}album/${imageId}`).then((response) => {
+        setDetailImage(response.data);
+      });
+    });
   };
 
   return (
@@ -53,6 +60,7 @@ const DetailPage = ({ apiUrl }) => {
         likeNumber={detailImage.article_like}
         imageContent={detailImage.content}
         image={detailImage.img}
+        likePlus={() => onLike(detailImage.id)}
       />
 
       <InputWrapper>

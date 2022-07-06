@@ -13,6 +13,14 @@ const MainPage = ({ apiUrl }) => {
     });
   }, [apiUrl]);
 
+  const onLike = (imageId) => {
+    axios.patch(`${apiUrl}album/update/article/like/${imageId}`).then(() => {
+      axios.get(`${apiUrl}album/articles`).then((response) => {
+        setImageArray(response.data);
+      });
+    });
+  };
+
   return (
     <>
       <Title
@@ -31,6 +39,7 @@ const MainPage = ({ apiUrl }) => {
             ImageTitle={element.title}
             ImageExplain={element.content}
             likeNumber={element.article_like}
+            likePlus={() => onLike(element.id)}
           />
         ))}
       </Background>
