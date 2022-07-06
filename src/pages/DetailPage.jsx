@@ -30,10 +30,10 @@ const DetailPage = ({ apiUrl }) => {
         content: inputComment,
       })
       .then((response) => {
-        //setComment(response.data); //여기에 문제가 있음
+        setComment(response.data); //여기에 문제가 있음
         //comment.push(inputComment); //이건 혹시나 하고...무시해도 좋음
-        //setInputComment("");
-        window.location.reload();
+        setInputComment("");
+        //window.location.reload();
       });
   };
 
@@ -41,8 +41,8 @@ const DetailPage = ({ apiUrl }) => {
     axios
       .delete(`${apiUrl}album/delete/comment/${commentId}`)
       .then((response) => {
-        //setComment(response.data);
-        window.location.reload();
+        setComment(response.data);
+        //window.location.reload();
       });
   };
 
