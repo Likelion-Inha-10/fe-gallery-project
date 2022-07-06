@@ -31,9 +31,9 @@ const DetailPage = ({ apiUrl }) => {
       })
       .then((response) => {
         //setComment(response.data); //여기에 문제가 있음
-        comment.push(inputComment);
-        setInputComment("");
-        //window.location.reload();
+        //comment.push(inputComment); //이건 혹시나 하고...무시해도 좋음
+        //setInputComment("");
+        window.location.reload();
       });
   };
 
@@ -41,7 +41,8 @@ const DetailPage = ({ apiUrl }) => {
     axios
       .delete(`${apiUrl}album/delete/comment/${commentId}`)
       .then((response) => {
-        setComment(response.data);
+        //setComment(response.data);
+        window.location.reload();
       });
   };
 

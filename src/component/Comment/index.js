@@ -22,7 +22,7 @@ const Comment = ({ commentText, deleteComment }) => {
           {commentText}
         </TextBox>
         <Button
-          onclick={deleteComment}
+          onClick={deleteComment}
           color="gray"
           fontSize="16px"
           padding="10px 8px 0 0"
